@@ -1,0 +1,5 @@
+# Remove all of vscode settings
+.vscode
+
+# Remove all assets created by program
+assets/*
