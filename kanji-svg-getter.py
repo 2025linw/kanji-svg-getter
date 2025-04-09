@@ -1,3 +1,5 @@
+#!/opt/homebrew/bin/python3
+
 import os
 import fnmatch
 
@@ -39,10 +41,10 @@ def main():
             continue
 
         match user_input[0]:
-            case 'q':
+            case 'q' | "quit" | "exit":
                 running = False
 
-                if len(user_input) > 1 and user_input[1] == 'd':
+                if len(user_input) == 2 and user_input[1] == 'd':
                     delete = True
 
                 break
@@ -84,7 +86,7 @@ def main():
                             dest.write("\n")
 
     if delete:
-        print("Deleting svg's in assets folder")
+        print("Deleting svgs in assets folder")
         for file in find_pat("*.svg", "./assets"): # Remove all svg files
             os.remove(file)
 
